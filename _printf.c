@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	va_list ap;
 
 	if (format == NULL)
-		return (xters);
+		return (-1);
 	va_start(ap, format);
 	while (*format)
 	{

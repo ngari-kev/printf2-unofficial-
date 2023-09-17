@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 			{
 				str = va_arg(ap, char*);
 				i = strlen(str);
-				write(1, format, i);
+				write(1, str, i);
 				xters += i;
 			}
 		}

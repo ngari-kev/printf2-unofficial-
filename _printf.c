@@ -6,8 +6,7 @@
   */
 int _printf(const char *format, ...)
 {
-	/*xters is number of characters*/
-	int xters = 0, i = 0;
+	int xters = 0, i = 0;/*xters is number of characters*/
 	char c, *str;
 	va_list ap;
 
@@ -24,9 +23,8 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;/*if *format == %, we move to the next item*/
-			if (*format == '%')
+			if (*format == '%')/*if double %% is encountered*/
 			{
-				/*if %%, print %*/
 				write(1, format, 1);
 				xters++;
 			}

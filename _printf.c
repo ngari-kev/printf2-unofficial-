@@ -6,7 +6,8 @@
   */
 int _printf(const char *format, ...)
 {
-	int xters = 0, i = 0;/*xters is number of characters*/
+	/*xters is number of characters*/
+	int xters = 0, i = 0;
 	char c, *str;
 	va_list ap;
 
@@ -23,8 +24,9 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;/*if *format == %, we move to the next item*/
-			if (*format == '%')/*if double %% is encountered*/
+			if (*format == '%')
 			{
+				/*if %%, print %*/
 				write(1, format, 1);
 				xters++;
 			}
@@ -38,7 +40,7 @@ int _printf(const char *format, ...)
 			{
 				str = va_arg(ap, char*);
 				i = strlen(str);
-				write(1, str, i);
+				write(1, format, i);
 				xters += i;
 			}
 		}
